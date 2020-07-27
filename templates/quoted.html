@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block title %}
+quoted
+{% endblock %}
+
+{% block main %}
+    <p>{{ quote["symbol"] }} -> {{ quote["name"] }} is trading for {{ quote["price"] | usd }}</p>
+{% endblock %}

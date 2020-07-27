@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+index
+{% endblock %}
+
+{% block main %}
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+                <th>
+                    Symbol
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Shares
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Total
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for own,look,total in zips %}
+            <tr>
+                <td>{{ own['symbol'] }}</td>
+                <td>{{ look['name'] }}</td>
+                <td>{{ own['shares'] }}</td>
+                <td>{{ look['price'] }}</td>
+                <td>{{ total }}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td>Cash</td>
+                <td colspan="3"></td>
+                <td>{{ cash }}</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td colspan="3"></td>
+                <td>{{ sum }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
